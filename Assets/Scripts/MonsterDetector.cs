@@ -51,11 +51,12 @@ public class MonsterDetector : MonoBehaviour {
     void Update()
     {
         //test
-        /*
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Input.GetMouseButtonDown(2))
         {
             animator.SetTrigger("Flip");
         }
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             StartCoroutine(Fall());
