@@ -3517,6 +3517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce6b62fac818e44a8ec1a8f1e59d948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ayy: {fileID: 9100000, guid: 023de442f6859624b86c2071b63144bb, type: 2}
   hitting: {fileID: 0}
   player: {fileID: 0}
   hitBox: {fileID: 0}

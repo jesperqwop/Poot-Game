@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class MonsterDetector : MonoBehaviour {
 
+    public RuntimeAnimatorController ayy;
+
     public GameObject hitting;
 
     public GameObject player;
@@ -50,6 +52,7 @@ public class MonsterDetector : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
         //test
         
         if (Input.GetMouseButtonDown(2))
@@ -124,6 +127,7 @@ public class MonsterDetector : MonoBehaviour {
                     print("Escaped");
                     PlayerEscaped();
                     lostSight = false;
+                    animator.runtimeAnimatorController = ayy;
                 }
             }
         }

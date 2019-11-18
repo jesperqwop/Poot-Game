@@ -197,7 +197,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Two Cycle Sprint
+  m_Name: Poot 2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Chasing
@@ -341,8 +341,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 3b8e21789160a4e40b2ea39d11f5b2e8,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: a70bfee8c65a34744989e216672c42ff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
