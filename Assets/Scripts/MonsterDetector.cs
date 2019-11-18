@@ -127,7 +127,7 @@ public class MonsterDetector : MonoBehaviour {
                     print("Escaped");
                     PlayerEscaped();
                     lostSight = false;
-                    animator.runtimeAnimatorController = ayy;
+                    //animator.runtimeAnimatorController = ayy;
                 }
             }
         }

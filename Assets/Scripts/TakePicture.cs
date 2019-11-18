@@ -9,7 +9,7 @@ public class TakePicture : MonoBehaviour
     GameObject poot;
     AudioSource audioSource;
     Light blitz;
-
+    public GameObject cameraController;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class TakePicture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(1) && Input.GetMouseButtonDown(0) && cameraController.GetComponent<VHS.CameraMode>().cameraSelected == true)
         {
             StartCoroutine(Blitz());
         }
