@@ -165,7 +165,7 @@ public class MonsterDetector : MonoBehaviour {
  
         if (isChasingPlayer != true)
         {
-            //manager.GetComponent<Manager>().PlayMusic(true);
+            manager.GetComponent<Manager>().PlayMusic(true);
             isChasingPlayer = true;
             GetComponent<MonsterPatrol>().chasingPlayer = true;
             GetComponent<MonsterPatrol>().isSearchingForPlayer = false;
@@ -190,7 +190,7 @@ public class MonsterDetector : MonoBehaviour {
         isChasingPlayer = false;
         GetComponent<MonsterPatrol>().chasingPlayer = false;
         animator.SetBool("Chasing", false);
-        //manager.GetComponent<Manager>().PlayMusic(false);
+        manager.GetComponent<Manager>().PlayMusic(false);
     }
 
     public void Stun()
@@ -218,7 +218,7 @@ public class MonsterDetector : MonoBehaviour {
         stunned = true;
         animator.SetTrigger("Fall");
         navMeshAgent.speed = 0;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         navMeshAgent.speed = previousSpeed;
         stunned = false;
     }
