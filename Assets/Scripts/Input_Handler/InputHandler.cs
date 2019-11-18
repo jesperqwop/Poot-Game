@@ -50,25 +50,31 @@ namespace VHS
             {
                 cameraInputData.InputVectorX = Input.GetAxis("Mouse X");
                 cameraInputData.InputVectorY = Input.GetAxis("Mouse Y");
-
+            if(movementInputData.IsRunning != true)
+            {
                 cameraInputData.ZoomClicked = Input.GetMouseButtonDown(1);
                 cameraInputData.ZoomReleased = Input.GetMouseButtonUp(1);
+            }
+
             }
 
             void GetMovementInputData()
             {
                 movementInputData.InputVectorX = Input.GetAxisRaw("Horizontal");
                 movementInputData.InputVectorY = Input.GetAxisRaw("Vertical");
-
+            if(cameraInputData.IsZooming != true)
+            {
                 //movementInputData.IsRunning = Input.GetKey(KeyCode.LeftShift);
                 movementInputData.RunClicked = Input.GetKeyDown(KeyCode.LeftShift);
                 movementInputData.RunReleased = Input.GetKeyUp(KeyCode.LeftShift);
 
-                if(movementInputData.RunClicked)
+                if (movementInputData.RunClicked)
                     movementInputData.IsRunning = true;
 
-                if(movementInputData.RunReleased)
+                if (movementInputData.RunReleased)
                     movementInputData.IsRunning = false;
+            }
+
 
                 movementInputData.JumpClicked = Input.GetKeyDown(KeyCode.Space);
                 movementInputData.CrouchClicked = Input.GetKeyDown(KeyCode.LeftControl);

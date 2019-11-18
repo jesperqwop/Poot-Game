@@ -2,34 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using NaughtyAttributes;
 
-public class CameraMode : MonoBehaviour
+namespace VHS
 {
-    public bool aiming;
-    public PostProcessProfile normalProfile;
-    public PostProcessProfile zoomProfile;
-    PostProcessVolume volume;
-
-    // Start is called before the first frame update
-    void Start()
+    public class CameraMode : MonoBehaviour
     {
-        volume = GameObject.FindGameObjectWithTag("Post").GetComponent<PostProcessVolume>();
-    }
+        public MovementInputData movementInputData;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
+        public bool aiming;
+        public PostProcessProfile normalProfile;
+        public PostProcessProfile zoomProfile;
+        PostProcessVolume volume;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            volume.profile = zoomProfile;
-            GetComponent<Animator>().SetBool("CameraUp",true);
-            aiming = true;
+            volume = GameObject.FindGameObjectWithTag("Post").GetComponent<PostProcessVolume>();
         }
-        if (Input.GetMouseButtonUp(1))
+
+        // Update is called once per frame
+        void Update()
         {
-            volume.profile = normalProfile;
-            GetComponent<Animator>().SetBool("CameraUp", false);
-            aiming = false;
+            if (movementInputData.IsRunning != true)
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    volume.profile = zoomProfile;
+                    GetComponent<Animator>().SetBool("CameraUp", true);
+                    aiming = true;
+                }
+                if (Input.GetMouseButtonUp(1))
+                {
+                    volume.profile = normalProfile;
+                    GetComponent<Animator>().SetBool("CameraUp", false);
+                    aiming = false;
+                }
+            }
         }
     }
 }
+
