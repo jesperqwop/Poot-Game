@@ -15,7 +15,6 @@ public class MonsterDetector : MonoBehaviour {
 
     public AudioClip[] spotted;
     public AudioClip[] roaming;
-    public AudioClip[] death;
 
     public bool playerInSight;
     public bool isChasingPlayer;
@@ -30,7 +29,6 @@ public class MonsterDetector : MonoBehaviour {
     public float fov;
     public float unfollowTime;
     public float searchTime;
-    public float attackRange;
     float lostSightTime;
     float heardTime;
 
@@ -86,11 +84,6 @@ public class MonsterDetector : MonoBehaviour {
                 if (angleToPlayer >= -fov && angleToPlayer <= fov)
                 {
                         PlayerDetected();
-                    if(hit.distance <= attackRange && canAttack == true)
-                    {
-                        animator.SetTrigger("Attack");
-                        canAttack = false;
-                    }
                 }
                 else
                 {
@@ -136,8 +129,8 @@ public class MonsterDetector : MonoBehaviour {
 
             if(GetComponent<AudioSource>().isPlaying != true)
             {
-                //GetComponent<AudioSource>().clip = roaming[Random.Range(0, roaming.Length)];
-                //GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().clip = roaming[Random.Range(0, roaming.Length)];
+                GetComponent<AudioSource>().Play();
             }
 
             if (isSearchingForPlayer != true)
@@ -216,14 +209,19 @@ public class MonsterDetector : MonoBehaviour {
         StartCoroutine(Fall());
     }
 
+    public void Attack()
+    {
+        hitBox.GetComponent<HitBox>().DoDamage();
+    }
+
     IEnumerator Fall()
     {
-        float previousSpeed = navMeshAgent.speed;
+        //float previousSpeed = navMeshAgent.speed;
         stunned = true;
         animator.SetTrigger("Fall");
-        navMeshAgent.speed = 0;
+        //navMeshAgent.speed = 0;
         yield return new WaitForSeconds(5);
-        navMeshAgent.speed = previousSpeed;
+        //navMeshAgent.speed = previousSpeed;
         stunned = false;
     }
 
