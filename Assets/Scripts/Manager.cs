@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
 
+    public int evidenceFound;
     public GameObject player;
     public GameObject soundPos;
     public AudioClip chaseAmbience;

@@ -9,6 +9,7 @@ TagManager:
   - Post
   - CameraView
   - Poot
+  - Evidence
   layers:
   - Default
   - TransparentFX

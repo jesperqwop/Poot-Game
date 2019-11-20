@@ -64,7 +64,7 @@ namespace VHS
                 movementInputData.InputVectorY = Input.GetAxisRaw("Vertical");
             if(cameraInputData.IsZooming != true)
             {
-                //movementInputData.IsRunning = Input.GetKey(KeyCode.LeftShift);
+                movementInputData.IsRunning = Input.GetKey(KeyCode.LeftShift);
                 movementInputData.RunClicked = Input.GetKeyDown(KeyCode.LeftShift);
                 movementInputData.RunReleased = Input.GetKeyUp(KeyCode.LeftShift);
 

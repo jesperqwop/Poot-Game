@@ -46,6 +46,7 @@ namespace VHS
                         volume.profile = normalProfile;
                         GetComponent<Animator>().SetBool("CameraUp", false);
                         aiming = false;
+                        //cameraInputData.IsZooming = false;
                     }
                 }
             }
